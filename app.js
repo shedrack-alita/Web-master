@@ -1,11 +1,7 @@
 
-
     const express = require('express');
-
     const app = express();
-
     const port = 2022;
-
     const bodyParser = require('body-parser');
 
     let clients = [
@@ -26,7 +22,6 @@
             password: 'Forum2011Git',
             confirm_password: 'Forum2011Git'
         },
-
         {
             id:3,
             first_name: 'Fred',
@@ -44,7 +39,6 @@
             password: 'Maria2013',
             confirm: 'Maria2013'
         },
-
         {
             id:5,
             first_name: 'Amen',
@@ -56,19 +50,14 @@
     ]
 
     const newMem = require('./src/routes/clientsRouter')
-    
     app.use(express.json());
-
     app.use (newMem);
 
     // parse application
-
     app.use(bodyParser.urlencoded({extended:false}));
     app.use(bodyParser.json());
 
     // Request port and callback function
-
     app.listen(port,() => {
     console.log('server listening to port' + ' ' + port); 
-
 })    
